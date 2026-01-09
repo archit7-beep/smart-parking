@@ -1,0 +1,10 @@
+# Secrets
+firebase_key.json
+sheets_key.json
+
+# Python
+__pycache__/
+*.pyc
+
+# Environment
+.env
