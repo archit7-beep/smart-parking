@@ -28,7 +28,7 @@ def index():
 
         # -------- Check if already checked in today --------
         existing = db.collection("checkins") \
-            .where("contact", "==", contact) \
+            .where("vehicle", "==", vehicle) \
             .where("date", "==", today) \
             .limit(1) \
             .stream()
@@ -64,7 +64,7 @@ def index():
         })
 
         # -------- Store check-in record --------
-        db.collection("checkins").add({
+        db.collection("checkins").document(doc_id).set({
             "name": name,
             "vehicle": vehicle,
             "contact": contact,
