@@ -69,17 +69,17 @@
         <h2>Parking Entry</h2>
 
         <form method="post">
-            <label>User Name</label>
+            <label>*User Name*</label>
             <input type="text" name="name" placeholder="Enter full name" required>
 
-            <label>Vehicle Number</label>
+            <label>*Vehicle Number*</label>
             <input type="text" name="vehicle" placeholder="MH12AB1234" required>
 
-            <label>Mobile Number</label>
+            <label>*Mobile Number*</label>
             <input type="text" name="contact" placeholder="10-digit number" required>
 
-            <label>Amount Paid (₹)</label>
-            <input type="number" name="amount" placeholder="Enter amount" required>
+            <label>*Amount Paid (₹)*</label>
+            <input type="text" name="amount" required pattern="[0-9]+" placeholder="Enter Amount only"required>
 
             <button type="submit">Record Entry</button>
         </form>
