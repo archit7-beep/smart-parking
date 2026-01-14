@@ -21,6 +21,6 @@ A smart parking management system built using:
 ## Note
 Sensitive credential files are excluded for security reasons.
 
-Credits
+Credits : 
 
 1.Project Lead : Archit Sali  ||   2. Backend : Jatin Watwani  ||  3. Bakend : Shahid Inamdar 
