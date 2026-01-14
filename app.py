@@ -2,6 +2,9 @@ from flask import Flask, render_template, request, make_response, redirect, url_
 from datetime import datetime
 import firebase_admin
 from firebase_admin import credentials, firestore
+import os, json
+
+
 
 # ---------------- Config ----------------
 DAILY_CHARGE = 5          # fixed parking charge per day
@@ -11,9 +14,13 @@ LOW_BALANCE_LIMIT = 5    # low balance alert
 app = Flask(__name__)
 
 # ---------------- Firebase setup ----------------
-cred = credentials.Certificate("firebase_key.json")
+firebase_key = json.loads(os.environ.get("FIREBASE_KEY"))
+
+cred = credentials.Certificate(firebase_key)
 firebase_admin.initialize_app(cred)
+
 db = firestore.client()
+
 
 # ---------------- Main Route ----------------
 @app.route("/", methods=["GET", "POST"])
@@ -109,4 +116,4 @@ def success():
 
 # ---------------- Run app ----------------
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000)
